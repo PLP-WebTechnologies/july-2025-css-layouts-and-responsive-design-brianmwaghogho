@@ -1,0 +1,120 @@
+/* ================================
+   GLOBAL RESET & BASE STYLES
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ================================
+   HEADER
+================================ */
+.header {
+  background: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ================================
+   NAVIGATION (Flexbox)
+================================ */
+.nav {
+  background: #eee;
+}
+.nav ul {
+  display: flex;                 /* Flexbox: arrange items in a row */
+  justify-content: center;       /* Center items horizontally */
+  gap: 1.5rem;                   /* Space between items */
+  list-style: none;
+  padding: 1rem;
+}
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* ================================
+   MAIN LAYOUT (Grid)
+================================ */
+.main-grid {
+  display: grid;                 /* Grid for main layout */
+  grid-template-columns: 3fr 1fr;/* 3 parts content, 1 part sidebar */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* ================================
+   CONTENT SECTION
+================================ */
+.content {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* ================================
+   CARDS (Flexbox inside content)
+================================ */
+.cards {
+  display: flex;                 /* Flexbox for cards */
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;               /* Allow wrapping on smaller screens */
+}
+.card {
+  flex: 1 1 200px;               /* Flexible width, min 200px */
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* ================================
+   SIDEBAR
+================================ */
+.sidebar {
+  background: #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* ================================
+   FOOTER
+================================ */
+.footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ================================
+   RESPONSIVE MEDIA QUERIES
+================================ */
+
+/* Tablet screens (768px and below) */
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;  /* Stack content & sidebar vertically */
+  }
+  .nav ul {
+    flex-direction: column;      /* Stack nav links vertically */
+    align-items: center;
+  }
+}
+
+/* Mobile screens (480px and below) */
+@media (max-width: 480px) {
+  .cards {
+    flex-direction: column;      /* Stack cards vertically */
+  }
+}
